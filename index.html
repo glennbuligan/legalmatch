@@ -2,8 +2,380 @@
 <html>
 <head>
 	<title>LegalMatch</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
 </head>
-<body>
-<h1>TEST COMMIT</h1>
+<body ng-app="myApp" ng-controller="myController">
+	<header>
+		<div class="wrapper">
+			<img src="images/legalUp.jpg"></img>
+			<nav>
+				<ul id="listImg">
+					<li>No fee to present your case</li>
+					<li>Choose from lawyers in your area</li>
+					<li>A 100% confidential service</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div class="container-fluid">
+		<div class="wrapper">
+		<!-- <div class="row"> -->
+			<div class="col-sm-7">
+				<h1>Find a Lawyer for your Legal Issue</h1>
+				<h4><strong>Fast, Free and Confidential</strong></h4>
+				<form id="form">
+					<div class="form-group">
+						<label class="control-label">Enter Zip Code or City:</label>
+						<div>
+							<input list="zipList" id="zipField" class="form-control rounded" type="text" name="" placeholder="Does not have to be where you live" ng-model="zip">
+							<datalist id="zipList">
+								<option value="Nowheresville, XX 00000">
+								<option value="Ohio, YY 00001">
+							</datalist>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label">Choose a category:</label>
+						<div>
+							<input id="input" list="categoryList" class="form-control rounded" type="text" name="" placeholder="Click to choose a legal category">
+							<datalist id="categoryList">
+								<option id="1" value="Family">
+								<option value="Criminal Defense">
+								<option value="Business">
+								<option value="Personal Injury">
+								<option value="Bankruptcy & Finances">
+								<option value="Products & Services">
+								<option value="Employment">
+								<option value="Real Estate">
+								<option value="Immigration">
+								<option value="Wills, Trusts & Estates">
+								<option value="Government">
+								<option value="Intellectual Property">
+							</datalist>
+						</div>
+					</div>
+					<div class="form-group col-sm-6 col-sm-offset-1" align="center">
+						<label class="control-label">Can't find your category?</label>
+						<a data-toggle="modal" data-target="#categoryModal" href="">Click here.</a>
+					</div>
+				</form>
+			</div>
+			<div class="col-sm-5">
+				<div class="review">
+					<h4>Clients review LegalMatch lawyers</h4>
+				</div>
+				<div class="row">
+					<div class="col-sm-3">
+						<img src="images/michell.png">
+						<h5><strong>Mitchell M.</strong></h5>
+						<h6>Cherry Hill, NJ</h6>
+					</div>
+					<div class="col-sm-9">
+						<p>Family Law <img src="images/star2.jpg"></p>
+						<p id="desc">"Lorem ipsum dolor sit amet, consecutetor adipiscing eit, sed do elusmod tempor inciddunt ut labore et...</p>
+						<p id="rev"><a href="">Read Review</a>   <img src="images/book.png"></p>
+					</div>
+				</div>
+				<h6>_______________________________________________________________________</h6>
+				<div class="row">
+					<div class="col-sm-3">
+						<img src="images/joel.png">
+						<h5><strong>Joel C.</strong></h5>
+						<h6>Little Rock, AK</h6>
+					</div>
+					<div class="col-sm-9">
+						<p>Job & Employment Law <img src="images/star2.jpg"></p>
+						<p id="desc">"Lorem ipsum dolor sit amet, consecutetor adipiscing eit, sed do elusmod tempor inciddunt ut labore...</p>
+						<p id="rev"><a href="">Read Review</a>   <img src="images/book.png"></p>
+					</div>
+				</div>
+				<h6>_______________________________________________________________________</h6>
+				<div class="row">
+					<div class="col-sm-3">
+						<img src="images/brigida.png">
+						<h5><strong>Brigida R.</strong></h5>
+						<h6>Dallas, TX</h6>
+					</div>
+					<div class="col-sm-9">
+						<p>Family Law <img src="images/star2.jpg"></p>
+						<p id="desc">"Lorem ipsum dolor sit amet, consecutetor adipiscing eit, sed do elusmod tempor inciddunt ut...</p>
+						<p id="rev"><a data-toggle="modal" data-target="#reviewModal" href="">Read Review</a>   <img src="images/book.png"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<footer>
+		<div class="wrapper">
+			<div>
+				<ul>
+					<img src="images/legalDown.png">
+				</ul>
+			</div>
+			<div class="footerCenter">
+				<ul>
+					<li>User Agreement . Privacy Policy . Site Map</li>
+					<li>  </li>
+					<li>  </li>
+					<li>Copyright 1999-2016 LegalMatch. All rights reserved. LegalMatch*.</li>
+					<li>the LegalMatch logo. and the tradedress are trademarks of LegalMatch. Patents Pending.</li>
+				</ul>
+			</div>
+			<div>
+				<nav>
+					<ul>
+						<li><img src="images/Truste.png"></li>
+						<li><img src="images/bbb.png"></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</footer>
+
+	<div class="modal fade" id="familyModal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content" align="left">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<label class="control-label"><h3>Which <strong>Family law</strong> issue(s) apply to your case?</h3></label>
+				</div>
+				<div class="modal-body">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="form-group">
+							<div class="col-sm-2">
+								<input type="checkbox" name="">
+							</div>
+							<label class="control-label col-sm-10">Adoptions</label>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-2">
+									<input type="checkbox" name="">
+							</div>
+							<label class="control-label col-sm-10">Guardianship</label>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-2">
+								<input type="checkbox" name="">
+							</div>
+							<label class="control-label col-sm-10">Child Custody and Visitation</label>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-2">
+								<input type="checkbox" name="">
+							</div>
+							<label class="control-label col-sm-10">Paternity</label>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="form-group">
+						<div class="col-sm-2">
+							<input type="checkbox" name="">
+							</div>
+							<label class="control-label col-sm-10">Child Support</label>
+							</div>
+						<div class="form-group">
+							<div class="col-sm-2">
+								<input type="checkbox" name="">
+							</div>
+							<label class="control-label col-sm-10">Separations</label>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-2">
+								<input type="checkbox" name="">
+							</div>
+							<label class="control-label col-sm-10">Divorce</label>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-2">
+								<input type="checkbox" name="">
+							</div>
+							<label class="control-label col-sm-10">Spousal Support or Alimony</label>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="modal-footer" >
+					<div class="col-sm-6 col-sm-offset-2">
+						<input class="btn btn-primary" type="button" name="" value="FIND A LAWYER NOW">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="categoryModal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content" align="left">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<label class="control-label"><h3><strong>Other Categories</strong></h3></label><br>
+					<label class="control-label"><h5>Choose the category that best fits your case</h5></label>
+				</div>
+				<div class="modal-body">
+				<div class="row otherCategories">
+					<div class="col-sm-6">
+						<div class="form-group">
+							<label class="control-label">Abuse (Child, Domestic, Sexual)</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Agencies & Administration</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Automobile ( DUI, Crimes, Speeding )</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Automobiles( Accidents, Insurance )</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Banking ( Business, Consumer )</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Bars & Restaurants</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Business Formation & Dissolution</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Children(Adoption, Custody, Support)</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Class Actions(Bad Drugs, Products)</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Commercial Law and Contracts</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Commercial Real Estate</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Constitutional Law</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Construction(Disputes, Liens)</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Categories Item Here</label>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="form-group">
+							<label class="control-label">Loremipsum Dolorsitament.</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Lonsectetur Scingelit(Baseererkj, Mereit)</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Miam Euvelit</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Mempor Auctor(Estiarma, Toeruseij)</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Nisultricies Dictumest.</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Ntfring Sodalelit(Aeetici Restoustoust)</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Ntvarius Lectus & Congue</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Pallentesque</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Riguia Aliquamattis(Nestusotu, Wewreist)</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Set Tigulempor</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Sehicula Sedsitamet</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Seque Nesturre</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">TollisGaurissed</label>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Tempor Auctor(Estiarma,Toeruslej)</label>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="reviewModal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content" align="left">
+				<div class="modal-header revHead">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<label class="control-label"><h5>CLIENT REVIEWS</h5></label>
+					<div class="row">
+						<div class="col-sm-2">
+							<img src="images/brigida.png">
+						</div>
+						<div class="col-sm-10">
+							<h4><strong>Brigida R.</strong></h4>
+							<h6>Dallas, TX</h6>
+							<h6><strong>Family Law</strong></h6>
+						</div>
+					</div>
+					<label class="control-label"><h5>Rating (29 users) <img src="images/star2.jpg" alt="Star"></h5></label>
+				</div>
+				<div class="modal-body">
+				<div class="row">
+					<div class="col-sm-8">
+						<h6><strong>Overall</strong></h6>
+						<h6>Responded in a timely manner</h6>
+						<h6>Answered questions clearly</h6>
+						<h6>Understood needs</h6>
+						<h6>Gave complete and clear information</h6>
+						<h6>Knowledgeable in legal area</h6>
+						<h6>Good value for money</h6>
+						<h6>Would hire again</h6>
+						<h6>Would recommend to friend</h6>
+					</div>
+					<div class="col-sm-4">
+						<img id="starCol" src="images/star2.jpg" alt="Star">
+						<img id="starCol" src="images/star2.jpg" alt="Star">
+						<img id="starCol" src="images/star2.jpg" alt="Star">
+						<img id="starCol" src="images/star2.jpg" alt="Star">
+						<img id="starCol" src="images/star2.jpg" alt="Star">
+						<img id="starCol" src="images/star2.jpg" alt="Star">
+						<img id="starCol" src="images/star2.jpg" alt="Star">
+						<img id="starCol" src="images/star2.jpg" alt="Star">
+						<img id="starCol" src="images/star2.jpg" alt="Star">
+					</div>
+				</div>
+				</div>
+				<div class="modal-footer" >
+					<div align="left">
+						<h6><img id="starCol" src="images/star2.jpg" alt="Star"> <strong>by Dexter Marchal, 06/10/2016</strong></h6>
+						<h6>Deb did a great job. Got my bench warrant set aside... was sure I was toing to jail...phew.<br> Judge seemed to respect her and I got what I</h6>
+						<h6 style="color: blue; text-align: right;">CLOSE</h6>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 </body>
+
+<script type="text/javascript" src="script/myController.js"></script>
+
 </html>
