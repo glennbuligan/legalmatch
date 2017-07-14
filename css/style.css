@@ -1,0 +1,68 @@
+body{
+	margin: 0;
+}
+.container-fluid{
+	background-color: #032c6b;
+	color: #ffffff;
+}
+.wrapper{
+	width: 100%;
+	max-width: 1180px;
+	padding: 0;
+	margin: 20px auto;
+}
+
+header nav{
+	float: right;
+}
+header nav li{
+	list-style-type: none;
+}
+
+footer ul{
+	float: left;
+	padding: 0;
+	list-style-type: none;
+	width: 35%;
+	margin-left: 0;
+
+}
+footer li{
+	margin: 0;
+	text-align: center;
+	list-style-type: none;
+}
+footer nav{
+	float: right;
+}
+.footerCenter{
+	width: 100%;
+}
+a{
+	color: #ffffff;
+}
+.review{
+	margin-top: 60px;
+	margin-bottom: 30px;
+}
+#desc{
+	font-style: italic;
+}
+#rev{
+	text-align: right;
+	color: yellow;
+}
+#form{
+	margin-top: 40px;
+}
+.otherCategories{
+	color: blue;
+}
+.rounded{
+	border-radius: 75px;
+	width: 70%;
+	height: 50px;
+}
+#starCol{
+	margin: 5.5px 0;
+}
